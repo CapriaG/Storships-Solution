@@ -84,8 +84,8 @@ const Calculator = () => {
             </div>
             <label>¿Dónde te lo entregamos?</label>
             <select value={location} onChange={(e) => setLocation(e.target.value)}>
-              <option value="caba">CABA (USD 8)</option>
-              <option value="gba">GBA (USD 10)</option>
+              <option value="caba">CABA</option>
+              <option value="gba">GBA</option>
             </select>
             <button type="submit">Calcular Envío</button>
           </form>
