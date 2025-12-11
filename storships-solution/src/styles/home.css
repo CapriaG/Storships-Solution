@@ -1,0 +1,160 @@
+/* === Base Home === */
+.home-section {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 0;
+}
+
+.home-container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 130px 150px 20px 150px;
+  color: white;
+}
+
+.home-content {
+  max-width: 450px;
+}
+
+.home-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.home-content .highlight {
+  color: #ffd54f;
+}
+
+.home-content p {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* === Botón con animación inicial === */
+@keyframes pulse-btn {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.6);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 12px rgba(26, 115, 232, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(26, 115, 232, 0);
+  }
+}
+
+.home-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: transparent;
+  color: #1a73e8;
+  border: 2px solid #ffd54f;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulse-btn 1.8s ease-out  infinite;
+}
+
+.home-btn:hover {
+  background: #ffd54f;
+  color: #fff;
+  border-color: #ffd54f;
+}
+
+/* === Icons row (solo en desktop) === */
+.icons-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  animation: wave-icon 1.5s ease-in-out 1; /* 👈 animación solo 1 vez */
+}
+
+/* animación de ola */
+@keyframes wave-icon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* retrasos para simular ola */
+.icon-item:nth-child(1) { animation-delay: 0s; }
+.icon-item:nth-child(2) { animation-delay: 0.2s; }
+.icon-item:nth-child(3) { animation-delay: 0.4s; }
+.icon-item:nth-child(4) { animation-delay: 0.6s; }
+
+.icon-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #dddddd;
+  padding: 5px;
+  margin-bottom: 8px;
+}
+
+.icon-item:hover {
+  transform: scale(1.1);
+}
+
+.icon-item p {
+  color: white;
+  font-size: 14px;
+}
+
+/* === Responsive ajustes === */
+@media (max-width: 1024px) {
+  .icons-row {
+    display: none; /* ocultamos los iconos */
+  }
+
+  .home-container {
+    padding: 80px 40px; /* menos padding */
+    align-items: center; /* centramos todo */
+    text-align: center;
+  }
+
+  .home-content {
+    max-width: 100%;
+  }
+
+  .home-content h1 {
+    font-size: 28px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+}

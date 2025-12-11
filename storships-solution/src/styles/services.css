@@ -1,0 +1,100 @@
+/* === Services Base === */
+.services-section {
+  background-color: #fff;
+  padding: 100px 480px;
+}
+
+.services-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+.services-image img {
+  width: 325px;
+  height: 325px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #e6e6e6;
+}
+
+.services-text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.services-text p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+/* === Responsive ajustes === */
+@media (max-width: 1200px) {
+  .services-section {
+    padding: 60px 80px; /* menos padding */
+  }
+
+  .services-container {
+    gap: 30px;
+  }
+
+  .services-image img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .services-text h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-section {
+    padding: 50px 40px;
+  }
+
+  .services-container {
+    flex-direction: column; /* imagen arriba, texto abajo */
+    text-align: center;
+    gap: 20px;
+  }
+
+  .services-image img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .services-text p {
+    max-width: 100%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .services-section {
+    padding: 40px 50px;
+  }
+
+  .services-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .services-text h2 {
+    font-size: 18px;
+  }
+
+  .services-text p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,36 @@
+/* Fuente global */
+body { 
+  font-family: 'Montserrat', sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+
+/* Barra superior */
+.top-bar {
+  background-color: #FCE489;
+  text-align: center;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 3px 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Logo */
+.logo-header {
+  height: 70px;
+  width: auto;
+}
+
+.nav-links .nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  margin-left: 20px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-links .nav-link:hover {
+  color: #0047cc;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,81 @@
+.questions-section {
+  padding: 100px 80px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.questions-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.questions-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* === Variación de alturas === */
+.question-card {
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 12px;
+  padding: 25px 20px 50px;
+  width: 260px;
+  position: relative;
+  text-align: left;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease;
+}
+
+
+/* Hover con scale */
+.question-card:hover {
+  transform: scale(1.03);
+}
+
+
+.question-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.question-card p {
+    font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.question-logo {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  width: 28px;
+  height: auto;
+}
+
+/* === Responsive === */
+@media (max-width: 1200px) {
+  .question-card {
+    width: 230px;
+  }
+}
+
+@media (max-width: 900px) {
+  .questions-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question-card {
+    width: 80%;
+    max-width: 400px;
+    min-height: auto;
+  }
+}

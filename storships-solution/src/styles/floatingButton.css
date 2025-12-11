@@ -1,0 +1,39 @@
+.floating-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #25d366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+
+  /* 🔥 Animación infinita tipo pulso */
+  animation: pulseWhatsApp 2s infinite;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  background: #1ebc57;
+}
+
+/* Keyframes para el efecto latido */
+@keyframes pulseWhatsApp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
