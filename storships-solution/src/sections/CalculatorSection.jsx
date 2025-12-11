@@ -92,7 +92,7 @@ const Calculator = () => {
 
           {shippingResult && (
             <div className="result-box">
-              <p>Impuestos (21.74%): <span>USD {shippingResult.tax}</span></p>
+              <p>Servicio: <span>USD {shippingResult.tax}</span></p>
               <p>Envío a {location.toUpperCase()}: <span>USD {shippingResult.delivery}</span></p>
               <hr />
               <h3>Total a Pagar: USD {shippingResult.total}</h3>
@@ -120,14 +120,14 @@ const Calculator = () => {
             <select value={productSize} onChange={(e) => setProductSize(e.target.value)}>
               <option value="small">Chico (Celular, Zapatillas)</option>
               <option value="medium">Mediano (Notebook, Consola)</option>
-              <option value="large">Grande (Valija, Monitor)</option>
+              <option value="large">Grande (Valija, TV)</option>
             </select>
             <button type="submit">Calcular Almacenamiento</button>
           </form>
 
           {storageResult && (
             <div className="result-box">
-              <p>Impuestos (21.74%): <span>USD {storageResult.tax}</span></p>
+              <p>Servicio: <span>USD {storageResult.tax}</span></p>
               <p>Almacenamiento ({days} días): <span>USD {storageResult.storage}</span></p>
               <hr />
               <h3>Total a Pagar: USD {storageResult.total}</h3>
