@@ -1,15 +1,19 @@
+/* === Custom Section Base === */
 .custom-section {
-  padding: 100px 480px;
   background-color: #fff;
+  /* CORRECCIÓN: Quitamos el 480px lateral. Usamos 20px por seguridad */
+  padding: 100px 20px;
+  width: 100%;
 }
 
 .custom-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
+  /* CORRECCIÓN: Ajustamos max-width para que controle el centrado */
+  max-width: 1100px; 
   margin: 0 auto;
-  gap: 50px;
+  gap: 80px; /* Más aire entre texto e imagen */
 }
 
 .custom-text h2 {
@@ -27,7 +31,7 @@
   font-weight: 400;
   color: #444;
   line-height: 1.6;
-  max-width: 550px;
+  /* Quitamos max-width fijo aquí para que fluya con el flexbox */
   margin-bottom: 30px;
 }
 
@@ -42,6 +46,8 @@
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none; /* Por si usas etiqueta <a> */
+  display: inline-block;
 }
 
 .custom-btn:hover {
@@ -56,37 +62,38 @@
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid #f2f2f2;
+  flex-shrink: 0; /* IMPORTANTE: Evita que la imagen se aplaste */
 }
 
-/* === Responsive ajustes (igual que services) === */
-@media (max-width: 1200px) {
+/* === Responsive ajustes === */
+
+/* Laptops pequeñas y Tablets Horizontal */
+@media (max-width: 1024px) {
   .custom-section {
-    padding: 60px 80px; /* menos padding */
+    padding: 80px 20px;
   }
 
   .custom-content {
-    gap: 30px;
+    max-width: 90%;
+    gap: 40px;
   }
-
+  
   .custom-image img {
     width: 280px;
     height: 280px;
   }
-
-  .custom-text h2 {
-    font-size: 24px;
-  }
 }
 
+/* Tablets Vertical y Móviles */
 @media (max-width: 900px) {
   .custom-section {
-    padding: 50px 40px;
+    padding: 60px 20px;
   }
 
   .custom-content {
-    flex-direction: column-reverse; /* imagen arriba, texto abajo */
+    flex-direction: column-reverse; /* Mantiene tu elección de invertir orden */
     text-align: center;
-    gap: 20px;
+    gap: 30px;
   }
 
   .custom-image img {
@@ -94,27 +101,11 @@
     height: 240px;
   }
 
-  .custom-text p {
-    max-width: 100%;
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 500px) {
-  .custom-section {
-    padding: 40px 50px;
-  }
-
-  .custom-image img {
-    width: 200px;
-    height: 200px;
-  }
-
   .custom-text h2 {
-    font-size: 17px;
+    font-size: 24px;
   }
 
   .custom-text p {
-    font-size: 13px;
+    font-size: 15px;
   }
 }

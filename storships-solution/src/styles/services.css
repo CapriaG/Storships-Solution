@@ -1,16 +1,20 @@
 /* === Services Base === */
 .services-section {
   background-color: #fff;
-  padding: 100px 480px;
+  /* CAMBIO CLAVE: Quitamos el 480px. 
+     Usamos "20px" a los costados solo para que no toque el borde en móviles */
+  padding: 100px 20px; 
+  width: 100%;
 }
 
 .services-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 50px;
+  /* CAMBIO CLAVE: Esto es lo que centra el contenido, no el padding */
+  max-width: 1000px; 
+  margin: 0 auto; 
+  gap: 80px; /* Aumenté un poco el gap para que respiren */
 }
 
 .services-image img {
@@ -19,6 +23,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #e6e6e6;
+  flex-shrink: 0; /* Evita que la imagen se aplaste si falta espacio */
 }
 
 .services-text h2 {
@@ -35,38 +40,38 @@
   font-size: 16px;
   color: #333;
   line-height: 1.6;
-  max-width: 550px;
+  /* Quitamos el max-width fijo para que se adapte al contenedor flex */
 }
 
 /* === Responsive ajustes === */
-@media (max-width: 1200px) {
-  .services-section {
-    padding: 60px 80px; /* menos padding */
-  }
 
+/* Tablet y Laptops pequeñas (o zoom 125%) */
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 80px 20px;
+  }
+  
   .services-container {
-    gap: 30px;
+    max-width: 90%; /* Asegura que no se pegue a los bordes */
+    gap: 40px;
   }
 
   .services-image img {
     width: 280px;
     height: 280px;
   }
-
-  .services-text h2 {
-    font-size: 24px;
-  }
 }
 
-@media (max-width: 900px) {
+/* Móviles y Tablets verticales */
+@media (max-width: 768px) {
   .services-section {
-    padding: 50px 40px;
+    padding: 60px 20px;
   }
 
   .services-container {
-    flex-direction: column; /* imagen arriba, texto abajo */
+    flex-direction: column; /* Pone uno arriba del otro */
     text-align: center;
-    gap: 20px;
+    gap: 30px;
   }
 
   .services-image img {
@@ -74,27 +79,11 @@
     height: 240px;
   }
 
-  .services-text p {
-    max-width: 100%;
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 500px) {
-  .services-section {
-    padding: 40px 50px;
-  }
-
-  .services-image img {
-    width: 200px;
-    height: 200px;
-  }
-
   .services-text h2 {
-    font-size: 18px;
+    font-size: 24px;
   }
-
+  
   .services-text p {
-    font-size: 14px;
+    font-size: 15px;
   }
 }

@@ -60,22 +60,59 @@
   height: auto;
 }
 
-/* === Responsive === */
-@media (max-width: 1200px) {
-  .question-card {
-    width: 230px;
-  }
-}
+/* === Responsive Moderno === */
 
 @media (max-width: 900px) {
+  .questions-section {
+    padding: 60px 0; /* Quitamos padding lateral para que el carrusel toque los bordes */
+    overflow: hidden; /* Evita scroll horizontal en toda la página */
+  }
+
+  .questions-title {
+    padding: 0 20px; /* Le devolvemos el padding solo al título */
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
   .questions-container {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-direction: row; /* Forzamos fila, no columna */
+    flex-wrap: nowrap; /* IMPORTANTE: No dejar que bajen */
+    justify-content: flex-start; /* Alineado al inicio */
+    align-items: stretch; /* Todas las cards misma altura */
+    gap: 15px;
+    
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    scroll-snap-type: x mandatory; /* Efecto imán al soltar */
+    
+    padding: 20px 20px 40px 20px; /* Padding extra abajo para la sombra */
+    
+    /* Ocultar barra de scroll (opcional, para estética limpia) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  /* Ocultar barra de scroll en Chrome/Safari */
+  .questions-container::-webkit-scrollbar {
+    display: none;
   }
 
   .question-card {
-    width: 80%;
-    max-width: 400px;
-    min-height: auto;
+    /* TRUCO UX: */
+    min-width: 85%; /* Ocupa casi toda la pantalla */
+    max-width: 85%; /* Asegura que no crezca más */
+    
+    scroll-snap-align: center; /* La tarjeta se centra sola al soltar */
+    margin: 0; /* Reseteamos margenes */
+    
+    /* Ajustes visuales para mobile */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Envía el logo al fondo si hay espacio */
+  }
+
+  .question-card:first-child {
+    margin-left: 0;
   }
 }
