@@ -2,6 +2,15 @@ import "../styles/custom.css";
 import sectionImg from "../assets/customMan.png";
 
 const CustomSection = () => {
+  // Número formateado (sin +, sin paréntesis, sin espacios)
+  const PHONE_NUMBER = "19549825016";
+
+  // Mensaje para el asesor
+  const message = "Hola! Vi que pueden ir a comprar a tiendas físicas por mí. Quisiera asesoramiento sobre este servicio.";
+
+  // Link dinámico
+  const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+
   return (
     <section className="custom-section">
       <div className="custom-content">
@@ -15,7 +24,16 @@ const CustomSection = () => {
             y te enviamos el producto a Argentina o lo almacenamos hasta que viajes
             y lo retires personalmente.
           </p>
-          <button className="custom-btn">Hablá con un asesor</button>
+          
+          {/* Botón convertido en Link de WhatsApp */}
+          <a 
+            href={whatsappLink}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="custom-btn"
+          >
+            Hablá con un asesor
+          </a>
         </div>
 
         <div className="custom-image">

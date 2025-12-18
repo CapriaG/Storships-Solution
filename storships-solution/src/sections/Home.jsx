@@ -1,4 +1,3 @@
-
 import "../styles/home.css";
 import bgImage from "../assets/home-bg.png"; 
 import iconNotebook from "../assets/icons/notebook.png";
@@ -9,6 +8,15 @@ import iconCleaning from "../assets/icons/cleaning.png";
 import iconRunning from "../assets/icons/running.png";
 
 export default function Home() {
+
+  // Función para hacer scroll suave
+  const scrollToCalculator = () => {
+    const section = document.getElementById("calculator");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="home-section">
       <div
@@ -25,7 +33,11 @@ export default function Home() {
             lo almacenamos por vos y lo enviamos a Argentina o lo guardamos
             hasta tu próximo viaje.
           </p>
-          <button className="home-btn">Coordiná tu envío</button>
+          
+          {/* AGREGAMOS EL EVENTO ONCLICK AQUÍ */}
+          <button className="home-btn" onClick={scrollToCalculator}>
+            Coordiná tu envío
+          </button>
         </div>
 
         <div className="icons-row">

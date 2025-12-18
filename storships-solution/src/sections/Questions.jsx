@@ -26,7 +26,7 @@ const Questions = () => {
     {
       question: "¿Cuánto tiempo pueden almacenar mis productos?",
       answer:
-        "Podemos guardar tus compras por un tiempo determinado sin costo, y si necesitás más tiempo, ofrecemos planes de almacenamiento flexible. Consultanos por WhatsApp para coordinarlo.",
+        "Podemos guardar tus compras por un tiempo determinado, y si necesitás más tiempo, ofrecemos planes de almacenamiento flexible. Consultanos por WhatsApp para coordinarlo.",
     },
   ];
 

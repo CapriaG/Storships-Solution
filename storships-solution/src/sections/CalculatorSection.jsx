@@ -4,9 +4,8 @@ import bgMap from "../assets/bg-map.png";
 
 const Calculator = () => {
   // --- TUS DATOS ---
-  // IMPORTANTE: Poné tu número real aquí con formato internacional (549 + area + numero)
-  // Ejemplo: 5491122334455 (sin + ni espacios)
-  const PHONE_NUMBER = "5491100000000"; 
+  // Formato: Código país (1) + Area Code (954) + Número (9825016)
+  const PHONE_NUMBER = "19549825016"; 
 
   // --- ESTADOS ---
   const [shippingProductValue, setShippingProductValue] = useState("");
@@ -70,7 +69,12 @@ const Calculator = () => {
   };
 
   return (
-    <section className="calculator-section" style={{ backgroundImage: `url(${bgMap})` }}>
+    /* --- CAMBIO AQUÍ: Agregamos id="calculator" para que el botón funcione --- */
+    <section 
+      id="calculator" 
+      className="calculator-section" 
+      style={{ backgroundImage: `url(${bgMap})` }}
+    >
       <div className="calculator-container">
         
         {/* --- CALCULADORA 1: ENVÍO --- */}
